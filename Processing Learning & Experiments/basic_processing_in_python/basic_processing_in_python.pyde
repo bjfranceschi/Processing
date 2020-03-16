@@ -2,15 +2,13 @@
 # as I understand it, the setup() function will run once to inialize things, and 
 # the draw function will run continuously from top to bottom until the program is killed
 
-
- 
-import sys
-
 def setup():
     size(650, 560) 
     stroke(255)
     frameRate(200)
-  
+
+# instantiate variable outside draw, then declare it as global when referencing
+speed = int()
 
 def draw():
     background(0)
@@ -19,16 +17,15 @@ def draw():
     for x in range(0, 1000, 50):
         ellipse(x, 250, 10, 10)
 
-    # must instantiate global variables with "global" in draw function
-    global Y
+    # reference as global
+    global speed
     
-    Y = Y + 1
+    speed = speed + 1
     
-    if Y > width:
-        Y = 0
+    if speed > width:
+        speed = 0
         print("condition met")
-        #sys.exit()
         
-    ellipse(Y, 200, 50, 50)
+    ellipse(speed, 200, 50, 50)
 
  
