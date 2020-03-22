@@ -9,7 +9,11 @@ def setup():
     stroke(200)
     
     global sf
-    sf = SoundFile(this, 'super_sprode.mp3')
+    
+    path = '/Users/Bfranceschi/Documents/Processing/song_library'
+    song = 'red_giant.mp3'
+
+    sf = SoundFile(this, path + '/' + song)
     
     
 def draw():

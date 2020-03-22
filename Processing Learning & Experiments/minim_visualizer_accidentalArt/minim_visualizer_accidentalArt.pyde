@@ -16,7 +16,11 @@ def setup():
     
     # make global variable to hold loaded mp3
     global player
-    player = minim.loadFile('super_sprode.mp3')
+    
+    path = '/Users/Bfranceschi/Documents/Processing/song_library'
+    song = 'super_sprode.mp3'
+    
+    player = minim.loadFile(path + '/' + song)
     print(player.left.get(10))
 
 Y = int()
