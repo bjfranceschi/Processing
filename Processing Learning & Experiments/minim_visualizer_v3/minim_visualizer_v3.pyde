@@ -9,9 +9,9 @@ add_library('minim')
 
 
 def setup():
-    # ideal for 1280x800 display
-    fullScreen(P3D)
     
+    fullScreen(P3D)
+
     # instantiate minim object
     minim = Minim(this)
     
@@ -28,15 +28,15 @@ def setup():
 
 def draw():
     background(0)
-    stroke(250)
+    stroke(255)
     
-    # band thickness is controlled by mouse Y position 
-    band_thickness = mouseY/6
-    #band_thickness = 4
+    # uncomment for band thickness controlled by mouse Y position 
+    #band_thickness = mouseY/6
+    band_thickness = .01
     
-    # band_amplitude is controlled by mouse X position
-    band_amplitude = mouseX
-    #band_amplitude = 200
+    # uncomment for band_amplitude controlled by mouse X position
+    #band_amplitude = mouseX
+    band_amplitude = 200
 
     # "player.left.get" is used to get a certain sample from the left channel.
     # bufferSize() is an integer with has the number of "samples" in the buffer.
@@ -67,8 +67,8 @@ def draw():
             height-(height/2) - band_thickness + sound_value_right*band_amplitude,
             sample-501)
         
-        # for the far back strip, need to map "sample" which is normally in the
-        # range of 0 to bufferSize max (0 to 1023) to fit where the side strips end
+            # must map "sample" which is normally in the range of 
+        # 0 to bufferSize max (0 to 1023) to fit where the side strips end
         x1 = map(sample, 0, player.bufferSize(), width-(width/1.45), width-(width/3.17))
         
         line(x1,
@@ -78,9 +78,8 @@ def draw():
              height/2+(band_thickness*1.50) + sound_value_mix*band_amplitude,
              -player.bufferSize())
         
-        global move_speed
-        move_speed = move_speed + .01
-
+        # save frames if making animation
+        #saveFrame('red_giant_frames/red_giant_########.png')
  
 def keyPressed():
     if key == ' ':
