@@ -22,8 +22,6 @@ def setup():
     song = 'red_giant.mp3'
     player = minim.loadFile(path + '/' + song)
     
-    global move_speed
-    move_speed = int()
 
 
 def draw():
