@@ -20,14 +20,12 @@ above triangle creation again.
 
 def setup():
     size(650, 700, P3D)
-    #noFill()
-    #stroke(215)
     
 
 def draw():
     background(100)
     
-    #starting from grid where 0,0 is center of window
+    # starting from grid where 0,0 is center of window
     translate(width/2, height/2.5, -1200)
 
     # set perspective
@@ -91,7 +89,7 @@ def draw():
             vertex(159.9, -220.1, 0)
             vertex(0, -270.1, -270.1)
             
-        #rotate to create adjacent triangles
+        # rotate to create adjacent triangles
         rotateZ(radians(72))
         
         
