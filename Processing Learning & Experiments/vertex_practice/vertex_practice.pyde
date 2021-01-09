@@ -1,10 +1,13 @@
-"""a regular pentagon is made up of 5 triangles with angles of 54, 54, and 72 degrees,
-which translates to the following coordinates (with origin at top (72-degree) point):
-A: (0, 0), B: (-1.599, -2.201), C: (1.599, -2.201), or any magnitude of these.
-Then need to extrude the middle meeting point of the triangles, which is where all
-the 72-degree angles meet (72*5=360), and by extruding this point up the
-Z-axis, the angles become more acute - hopefully down to 54-degrees so that
-they're equilateral.
+"""Goal here is to learn vertex() function by creating an icosahedron made up of
+equilateral triangles.
+
+Beginning with the top "pentagon", a regular pentagon is made up of 5 triangles
+with angles of 54, 54, and 72 degrees, which translates to the following coordinates
+(with origin at top (72-degree) vertex): A: (0, 0), B: (-1.599, -2.201), C: (1.599, -2.201),
+or any magnitude of these coefficients. Then need to extrude the middle meeting point
+of the triangles, which is where all the 72-degree angles meet (72*5=360), and by
+extruding this point up the Z-axis, the angles become slightly more acute - hopefully
+down to 54-degrees so that they're equilateral. Ended up eyeballing this part.
 
 The following code creates a single tringle for the top pentagon, "attached" to
 a single middle triangle, then rotates the canvas 36 degrees, and repeats this 5 times.
