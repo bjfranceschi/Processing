@@ -15,7 +15,6 @@ move_speed = int()
 
 def setup():
     fullScreen(P3D)
-    print(log(10))
     #size(1280, 630, P3D)
 
     path = '/Users/Bfranceschi/Documents/Processing/song_library'
@@ -59,11 +58,11 @@ def draw():
     fft.forward(player.mix)
 
     global spin_speed
-    spin_speed += .01
+    spin_speed += .04
     
     global move_speed
-    move_speed += 5
-    
+    move_speed += 10
+
     global cubes
     cubes.spawn(spin_speed, move_speed, fft)
 
