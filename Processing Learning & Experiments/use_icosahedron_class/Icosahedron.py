@@ -13,13 +13,13 @@ class Icosahedron():
         spawn():
             Generates icosahedron.
     """
+    
     def __init__(self, ico_size, rgb_fill=None, rgb_stroke=None):
         self.ico_size = ico_size
         self.rgb_fill = rgb_fill
         self.rgb_stroke = rgb_stroke
         
     def spawn(self):
-        
         ico_size = self.ico_size
         rgb_fill = self.rgb_fill
         rgb_stroke = self.rgb_stroke
