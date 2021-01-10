@@ -37,48 +37,49 @@ class Icosahedron():
                 stroke(rgb_stroke)
             else:
                 stroke(rgb_stroke[0], rgb_stroke[1], rgb_stroke[2])
-            
-        for i in range(0, 5):
-            # triangle for top pentagon
-            with beginShape():
-                vertex(0, 0, 1.599*ico_size)
-                vertex(-1.599*ico_size, -2.201*ico_size, 0)
-                vertex(1.599*ico_size, -2.201*ico_size, 0)
-                vertex(0, 0, 1.599*ico_size)
-        
-            # triangle for middle, point-down triangles
-            with beginShape():
-                vertex(0, -2.701*ico_size, -2.701*ico_size)
-                vertex(-1.599*ico_size, -2.201*ico_size, 0)
-                vertex(1.599*ico_size, -2.201*ico_size, 0)
-                vertex(0, -2.701*ico_size, -2.701*ico_size)
                 
-            # rotate to create adjacent triangles
-            rotateZ(radians(72))
-        
-        # flip canvas on its head
-        rotateY(radians(180))
-    
-        # offset so sets of triangles interlock
-        rotateZ(radians(36))
-        
-        # shift down 2.701*input, which is the z-amount taken from above middle triangles
-        translate(0, 0, 2.701*ico_size)
-        
-        for i in range(0, 5):
+        with pushMatrix():
+            for i in range(0, 5):
+                # triangle for top pentagon
+                with beginShape():
+                    vertex(0, 0, 1.599*ico_size)
+                    vertex(-1.599*ico_size, -2.201*ico_size, 0)
+                    vertex(1.599*ico_size, -2.201*ico_size, 0)
+                    vertex(0, 0, 1.599*ico_size)
             
-            with beginShape():
-                vertex(0, 0, 1.599*ico_size)
-                vertex(-1.599*ico_size, -2.201*ico_size, 0)
-                vertex(1.599*ico_size, -2.201*ico_size, 0)
-                vertex(0, 0, 1.599*ico_size)
+                # triangle for middle, point-down triangles
+                with beginShape():
+                    vertex(0, -2.701*ico_size, -2.701*ico_size)
+                    vertex(-1.599*ico_size, -2.201*ico_size, 0)
+                    vertex(1.599*ico_size, -2.201*ico_size, 0)
+                    vertex(0, -2.701*ico_size, -2.701*ico_size)
+                    
+                # rotate to create adjacent triangles
+                rotateZ(radians(72))
+            
+            # flip canvas on its head
+            rotateY(radians(180))
         
-    
-            with beginShape():
-                vertex(0, -2.701*ico_size, -2.701*ico_size)
-                vertex(-1.599*ico_size, -2.201*ico_size, 0)
-                vertex(1.599*ico_size, -2.201*ico_size, 0)
-                vertex(0, -2.701*ico_size, -2.701*ico_size)
+            # offset so sets of triangles interlock
+            rotateZ(radians(36))
+            
+            # shift down 2.701*input, which is the z-amount taken from above middle triangles
+            translate(0, 0, 2.701*ico_size)
+            
+            for i in range(0, 5):
                 
-            # rotate to create adjacent triangles
-            rotateZ(radians(72))
+                with beginShape():
+                    vertex(0, 0, 1.599*ico_size)
+                    vertex(-1.599*ico_size, -2.201*ico_size, 0)
+                    vertex(1.599*ico_size, -2.201*ico_size, 0)
+                    vertex(0, 0, 1.599*ico_size)
+            
+        
+                with beginShape():
+                    vertex(0, -2.701*ico_size, -2.701*ico_size)
+                    vertex(-1.599*ico_size, -2.201*ico_size, 0)
+                    vertex(1.599*ico_size, -2.201*ico_size, 0)
+                    vertex(0, -2.701*ico_size, -2.701*ico_size)
+                    
+                # rotate to create adjacent triangles
+                rotateZ(radians(72))
