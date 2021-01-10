@@ -3,8 +3,6 @@ from Icosahedron import Icosahedron
 
 def setup():
     size(640, 800, P3D)
-    stroke(180)
-    noStroke()
 
 def draw():
     background_colors = color(10, 0, 60)
